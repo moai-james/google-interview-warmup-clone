@@ -5,6 +5,7 @@ import { ArrowLeft, Mic, Keyboard, ArrowRight, Volume2, MoreVertical, ChevronRig
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
+import { motion } from 'framer-motion' // Add this import
 
 const positions = [
   "Data Analytics",
@@ -103,13 +104,36 @@ export function InterviewWarmupComponent() {
   const renderMainPage = () => (
     <div className="flex flex-col min-h-screen bg-gray-100">
       {renderHeader()}
-      <main className="flex-grow flex flex-col items-center justify-center p-4">
-        <h1 className="text-4xl font-bold mb-4 text-center">Interview warmup</h1>
-        <p className="text-center mb-8 max-w-md">
+      <motion.main 
+        className="flex-grow flex flex-col items-center justify-center p-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.h1 
+          className="text-4xl font-bold mb-4 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          Interview warmup
+        </motion.h1>
+        <motion.p 
+          className="text-center mb-8 max-w-md"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
           A quick way to prepare for your next interview
-        </p>
-        <Button onClick={handleStart} size="lg" className="w-full max-w-xs">Start practicing</Button>
-      </main>
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          <Button onClick={handleStart} size="lg" className="w-full max-w-xs">Start practicing</Button>
+        </motion.div>
+      </motion.main>
     </div>
   )
 
