@@ -7,6 +7,8 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Progress } from "@/components/ui/progress"
 import { motion } from 'framer-motion' // Add this import
 import dynamic from 'next/dynamic';
+import { parseQuestions, getRandomQuestions } from '@/utils/questionParser';
+import { Question } from '@/utils/questionParser';
 
 const VoiceRecorder = dynamic(() => import('./VoiceRecorder'), { ssr: false });
 
@@ -17,6 +19,7 @@ const positions = [
   "Project Management",
   "UX Design",
   "Cybersecurity",
+  "Trust Operations Personnel",
   "General"
 ]
 
@@ -29,22 +32,26 @@ export function InterviewWarmupComponent() {
   const [isRecording, setIsRecording] = useState(false)
   const [currentAnswer, setCurrentAnswer] = useState('');
   const [answers, setAnswers] = useState<string[]>(Array(totalQuestions).fill(''));
-
-  const questions = [
-    "Please tell me why you would be a good fit for this role.",
-    "What's your greatest professional achievement?",
-    "How do you handle stress and pressure?",
-    "Where do you see yourself in 5 years?",
-    "Do you have any questions for us?"
-  ]
+  const [questions, setQuestions] = useState<{ question: string; type: string }[]>([]);
 
   const handleStart = () => {
     setCurrentPage('position')
   }
 
-  const handlePositionSelect = (position: string) => {
-    setSelectedPosition(position)
-    setCurrentPage('intro')
+  const handlePositionSelect = async (position: string) => {
+    setSelectedPosition(position);
+    try {
+      const response = await fetch(`/api/questions?position=${encodeURIComponent(position)}&count=5`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch questions');
+      }
+      const selectedQuestions: Question[] = await response.json();
+      setQuestions(selectedQuestions.map(q => ({ question: q.question, type: q.type })));
+      setCurrentPage('intro');
+    } catch (error) {
+      console.error('Error fetching questions:', error);
+      // Handle the error appropriately (e.g., show an error message to the user)
+    }
   }
 
   const handleStartPractice = () => {
@@ -206,10 +213,12 @@ export function InterviewWarmupComponent() {
       <main className="flex-grow p-4">
         <Card className="w-full max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-sm font-normal text-blue-600">Background question</CardTitle>
+            <CardTitle className="text-sm font-normal text-blue-600">
+              {questions[currentStep]?.type === 'Background' ? 'Background question' : 'Situational question'}
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <h2 className="text-xl font-semibold mb-4">{questions[currentStep]}</h2>
+            <h2 className="text-xl font-semibold mb-4">{questions[currentStep]?.question}</h2>
             <div className="space-y-4">
               <VoiceRecorder onTranscriptionComplete={(transcription) => setCurrentAnswer(transcription)} />
               <textarea
@@ -236,7 +245,10 @@ export function InterviewWarmupComponent() {
                     <ArrowRight className="mr-2 h-4 w-4" /> Next
                   </>
                 ) : (
-                  'Finish'
+                  <>
+                    <span className="mr-2 inline-block w-4 h-4" />  
+                    <span className="flex items-center justify-center">Finish</span>
+                  </>
                 )}
               </Button>
             </div>

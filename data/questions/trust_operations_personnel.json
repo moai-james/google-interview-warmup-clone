@@ -1,0 +1,272 @@
+[
+  {
+    "question_id": 1,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "Imagine that you discover a colleague is sharing confidential client information without authorization. What actions would you take?",
+    "question_zh": "假設你發現一位同事未經授權分享機密的客戶資訊。你會採取什麼行動？"
+  },
+  {
+    "question_id": 2,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "As a trust_operations_personnel, you are offered a valuable gift from a client after closing a deal. How would you handle this situation?",
+    "question_zh": "作為信託業務人員，在完成一筆交易後，客戶向你提供了一份貴重禮物。你會如何處理這種情況？"
+  },
+  {
+    "question_id": 3,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "If you notice an error in a client's trust account that is in their favor, but they are unaware, what would you do?",
+    "question_zh": "如果你發現客戶的信託帳戶中有一個對他們有利的錯誤，但他們並不知情，你會怎麼做？"
+  },
+  {
+    "question_id": 4,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "You are under pressure from management to meet sales targets, but a product is not suitable for a client. How would you proceed?",
+    "question_zh": "管理層給你施加壓力要求達到銷售目標，但某個產品並不適合客戶。你會如何處理？"
+  },
+  {
+    "question_id": 5,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "You find that a senior colleague is violating company policies for personal gain. What steps would you take?",
+    "question_zh": "你發現一位資深同事為了個人利益違反公司政策。你會採取什麼步驟？"
+  },
+  {
+    "question_id": 6,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "Can you describe a time when you faced an ethical dilemma at work and how you resolved it?",
+    "question_zh": "你能描述一次在工作中面臨道德困境的經歷，以及你是如何解決的嗎？"
+  },
+  {
+    "question_id": 7,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "Tell us about an experience where you had to make a difficult decision that tested your integrity.",
+    "question_zh": "請告訴我們一次你必須做出考驗你誠信的艱難決定的經歷。"
+  },
+  {
+    "question_id": 8,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "How do you ensure you maintain professional ethics in your daily work?",
+    "question_zh": "你如何確保在日常工作中保持職業道德？"
+  },
+  {
+    "question_id": 9,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "Describe an instance where you witnessed unethical behavior and what actions you took.",
+    "question_zh": "描述一次你目睹不道德行為的情況，以及你採取了什麼行動。"
+  },
+  {
+    "question_id": 10,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Professional Ethics and Integrity",
+    "field": "Trust Operations Personnel",
+    "question": "What does 'integrity' mean to you in the context of being a trust_operations_personnel?",
+    "question_zh": "作為一名信託業務人員，'誠信'對你來說意味著什麼？"
+  },
+  {
+    "question_id": 11,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "A client is confused about complex trust terms. How would you explain these terms in a way they can understand?",
+    "question_zh": "一位客戶對複雜的信託條款感到困惑。你會如何用他們能理解的方式解釋這些條款？"
+  },
+  {
+    "question_id": 12,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "You need to inform a client about a mistake made in their account. How do you communicate this?",
+    "question_zh": "你需要告知客戶他們帳戶中出現的一個錯誤。你會如何溝通這件事？"
+  },
+  {
+    "question_id": 13,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "During a meeting, a client becomes upset over a policy they disagree with. How do you handle the conversation?",
+    "question_zh": "在會議中，一位客戶因為不同意某項政策而感到不悅。你會如何處理這次談話？"
+  },
+  {
+    "question_id": 14,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "You have to present a new trust product to a team of non-financial professionals. How do you approach this presentation?",
+    "question_zh": "你需要向一群非金融專業人士介紹一個新的信託產品。你會如何準備這次演示？"
+  },
+  {
+    "question_id": 15,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "A team member misunderstands instructions you gave, leading to a delay. How do you address this with them?",
+    "question_zh": "一位團隊成員誤解了你給的指示，導致了延誤。你會如何與他們溝通這個問題？"
+  },
+  {
+    "question_id": 16,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "Describe a time when you had to explain a complex concept to someone without your background. How did you ensure they understood?",
+    "question_zh": "描述一次你必須向一個沒有你背景的人解釋一個複雜概念的經歷。你如何確保他們理解？"
+  },
+  {
+    "question_id": 17,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "Can you give an example of a successful presentation you delivered? What made it effective?",
+    "question_zh": "你能舉例說明一次你成功的演示嗎？是什麼使它有效？"
+  },
+  {
+    "question_id": 18,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "Tell us about a time when you had to resolve a misunderstanding with a colleague or client.",
+    "question_zh": "告訴我們一次你必須解決與同事或客戶之間誤解的經歷。"
+  },
+  {
+    "question_id": 19,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "How do you adapt your communication style when dealing with different stakeholders?",
+    "question_zh": "在與不同的利益相關者打交道時，你如何調整你的溝通方式？"
+  },
+  {
+    "question_id": 20,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Communication and Expression Ability",
+    "field": "Trust Operations Personnel",
+    "question": "What strategies do you use to ensure effective communication within a team?",
+    "question_zh": "你使用什麼策略來確保團隊內部的有效溝通？"
+  },
+  {
+    "question_id": 21,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "A client's investment portfolio is underperforming. What steps would you take to address this issue?",
+    "question_zh": "一位客戶的投資組合表現不佳。你會採取什麼步驟來解決這個問題？"
+  },
+  {
+    "question_id": 22,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "You are faced with conflicting information about a client's account. How would you resolve the discrepancy?",
+    "question_zh": "你面臨著關於客戶帳戶的矛盾信息。你會如何解決這個差異？"
+  },
+  {
+    "question_id": 23,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "A new regulation impacts trust operations. How would you analyze its effect and advise your team?",
+    "question_zh": "一項新的法規影響了信託業務。你會如何分析其影響並向你的團隊提供建議？"
+  },
+  {
+    "question_id": 24,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "A client wants to achieve specific financial goals with constraints. How would you develop a suitable trust plan?",
+    "question_zh": "一位客戶希望在有限制的情況下實現特定的財務目標。你會如何制定一個合適的信託計劃？"
+  },
+  {
+    "question_id": 25,
+    "category": "General",
+    "type": "Situational",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "You identify a process inefficiency in your department. What steps would you take to improve it?",
+    "question_zh": "你發現你所在部門的一個流程效率低下。你會採取什麼步驟來改進它？"
+  },
+  {
+    "question_id": 26,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "Describe a challenging problem you solved at work. What approach did you take?",
+    "question_zh": "描述一個你在工作中解決的具有挑戰性的問題。你採取了什麼方法？"
+  },
+  {
+    "question_id": 27,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "Can you give an example of when your analytical skills made a significant difference in a project?",
+    "question_zh": "你能舉例說明你的分析技能在某個項目中產生重大影響的情況嗎？"
+  },
+  {
+    "question_id": 28,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "Tell us about a time when you had to make a decision with incomplete information.",
+    "question_zh": "告訴我們一次你必須在信息不完整的情況下做出決定的經歷。"
+  },
+  {
+    "question_id": 29,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "How do you prioritize tasks when faced with multiple pressing issues?",
+    "question_zh": "當面對多個緊迫問題時，你如何確定任務的優先順序？"
+  },
+  {
+    "question_id": 30,
+    "category": "General",
+    "type": "Background",
+    "evaluation_point": "Problem Solving and Analytical Ability",
+    "field": "Trust Operations Personnel",
+    "question": "What methods do you use to stay updated on industry trends and apply them to your work?",
+    "question_zh": "你使用什麼方法來保持對行業趨勢的了解，並將其應用到你的工作中？"
+  }
+]
