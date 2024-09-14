@@ -28,6 +28,7 @@ export function InterviewWarmupComponent() {
   const totalQuestions = 5
   const [isRecording, setIsRecording] = useState(false)
   const [currentAnswer, setCurrentAnswer] = useState('');
+  const [answers, setAnswers] = useState<string[]>(Array(totalQuestions).fill(''));
 
   const questions = [
     "Please tell me why you would be a good fit for this role.",
@@ -51,21 +52,36 @@ export function InterviewWarmupComponent() {
   }
 
   const handleNext = () => {
-    // Store the current answer (you might want to save this to state or send to an API)
-    console.log(`Answer for question ${currentStep + 1}:`, currentAnswer);
+    const newAnswers = [...answers];
+    newAnswers[currentStep] = currentAnswer;
+    setAnswers(newAnswers);
 
     if (currentStep < totalQuestions - 1) {
       setCurrentStep(currentStep + 1);
-      setCurrentAnswer(''); // Clear the answer for the next question
+      setCurrentAnswer(answers[currentStep + 1]);
     } else {
       setCurrentPage('analysis');
     }
   }
 
+  const handlePrevious = () => {
+    if (currentStep > 0) {
+      const newAnswers = [...answers];
+      newAnswers[currentStep] = currentAnswer;
+      setAnswers(newAnswers);
+      setCurrentStep(currentStep - 1);
+      setCurrentAnswer(answers[currentStep - 1]);
+    } else {
+      setCurrentPage('intro');
+    }
+  };
+
   const handlePracticeAgain = () => {
-    setCurrentStep(0)
-    setCurrentPage('main')
-    setSelectedPosition('')
+    setCurrentStep(0);
+    setCurrentPage('main');
+    setSelectedPosition('');
+    setAnswers(Array(totalQuestions).fill(''));
+    setCurrentAnswer('');
   }
 
   const handlePreviousStep = () => {
@@ -212,9 +228,22 @@ export function InterviewWarmupComponent() {
             <div className="text-sm text-gray-600">
               {currentStep + 1}/{totalQuestions}
             </div>
-            <Button onClick={handleNext}>
-              <ArrowRight className="mr-2 h-4 w-4" /> Next
-            </Button>
+            <div className="space-x-2">
+              {currentStep > 0 && (
+                <Button onClick={handlePrevious} variant="outline">
+                  <ArrowLeft className="mr-2 h-4 w-4" /> Previous
+                </Button>
+              )}
+              <Button onClick={handleNext}>
+                {currentStep < totalQuestions - 1 ? (
+                  <>
+                    <ArrowRight className="mr-2 h-4 w-4" /> Next
+                  </>
+                ) : (
+                  'Finish'
+                )}
+              </Button>
+            </div>
           </CardFooter>
         </Card>
       </main>
@@ -234,7 +263,7 @@ export function InterviewWarmupComponent() {
           </CardHeader>
           <CardContent>
             <p className="text-center text-gray-600">
-              Use the insight buttons to learn more about your answers. Try to reflect on what you said from the perspective of an interviewer. Identify what you&apos;d like to improve, then practice again.
+              Use the insight buttons to learn more about your answers. Try to reflect on what you&apos;d like to improve, then practice again.
             </p>
           </CardContent>
           <CardFooter className="flex justify-center">
