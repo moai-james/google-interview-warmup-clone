@@ -93,11 +93,7 @@ export function InterviewWarmupComponent() {
         setCurrentPage('position')
         break
       case 'interview':
-        if (currentStep > 0) {
-          setCurrentStep(currentStep - 1)
-        } else {
-          setCurrentPage('intro')
-        }
+        handlePrevious()
         break
       case 'analysis':
         setCurrentPage('interview')
