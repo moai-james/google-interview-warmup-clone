@@ -256,7 +256,7 @@ export function InterviewWarmupComponent() {
                   {language === 'en' ? 'Previous' : '上一題'}
                 </Button>
               )}
-              <Button onClick={handleNext}>
+              <Button onClick={handleNext} disabled={currentAnswer.trim() === ''}>
                 {currentStep < totalQuestions - 1 ? (
                   <>
                     <ArrowRight className="mr-2 h-4 w-4" />
