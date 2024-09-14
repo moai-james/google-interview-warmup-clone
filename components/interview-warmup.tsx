@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { motion } from 'framer-motion' // Add this import
+import dynamic from 'next/dynamic';
+
+const VoiceRecorder = dynamic(() => import('./VoiceRecorder'), { ssr: false });
 
 const positions = [
   "Data Analytics",
@@ -24,6 +27,7 @@ export function InterviewWarmupComponent() {
   const [volumeOn, setVolumeOn] = useState(true)
   const totalQuestions = 5
   const [isRecording, setIsRecording] = useState(false)
+  const [currentAnswer, setCurrentAnswer] = useState('');
 
   const questions = [
     "Please tell me why you would be a good fit for this role.",
@@ -47,10 +51,14 @@ export function InterviewWarmupComponent() {
   }
 
   const handleNext = () => {
+    // Store the current answer (you might want to save this to state or send to an API)
+    console.log(`Answer for question ${currentStep + 1}:`, currentAnswer);
+
     if (currentStep < totalQuestions - 1) {
-      setCurrentStep(currentStep + 1)
+      setCurrentStep(currentStep + 1);
+      setCurrentAnswer(''); // Clear the answer for the next question
     } else {
-      setCurrentPage('analysis')
+      setCurrentPage('analysis');
     }
   }
 
@@ -190,13 +198,14 @@ export function InterviewWarmupComponent() {
           </CardHeader>
           <CardContent>
             <h2 className="text-xl font-semibold mb-4">{questions[currentStep]}</h2>
-            <div className="flex space-x-2">
-              <Button className="flex-1">
-                <Mic className="mr-2 h-4 w-4" /> Answer with voice
-              </Button>
-              <Button variant="outline" className="flex-1">
-                <Keyboard className="mr-2 h-4 w-4" /> Answer with text
-              </Button>
+            <div className="space-y-4">
+              <VoiceRecorder onTranscriptionComplete={(transcription) => setCurrentAnswer(transcription)} />
+              <textarea
+                className="w-full h-32 p-2 border rounded"
+                value={currentAnswer}
+                onChange={(e) => setCurrentAnswer(e.target.value)}
+                placeholder="Type your answer here..."
+              />
             </div>
           </CardContent>
           <CardFooter className="flex justify-between items-center">
