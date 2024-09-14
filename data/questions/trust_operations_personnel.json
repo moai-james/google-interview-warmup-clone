@@ -195,7 +195,7 @@
     "evaluation_point": "Problem Solving and Analytical Ability",
     "field": "Trust Operations Personnel",
     "question": "You are faced with conflicting information about a client's account. How would you resolve the discrepancy?",
-    "question_zh": "你面臨著關於客戶帳戶的矛盾信息。你會如何解決這個差異？"
+    "question_zh": "你面臨著關於客戶帳戶的矛盾資訊。你會如何解決這個差異？"
   },
   {
     "question_id": 23,
@@ -249,7 +249,7 @@
     "evaluation_point": "Problem Solving and Analytical Ability",
     "field": "Trust Operations Personnel",
     "question": "Tell us about a time when you had to make a decision with incomplete information.",
-    "question_zh": "告訴我們一次你必須在信息不完整的情況下做出決定的經歷。"
+    "question_zh": "告訴我們一次你必須在資訊不完整的情況下做出決定的經歷。"
   },
   {
     "question_id": 29,
