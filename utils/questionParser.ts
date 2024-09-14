@@ -8,6 +8,7 @@ export interface Question {
   evaluation_point: string;
   field: string;
   question: string;
+  question_zh: string; // Added question_zh field
 }
 
 export function getRandomQuestions(questions: Question[], count: number): Question[] {

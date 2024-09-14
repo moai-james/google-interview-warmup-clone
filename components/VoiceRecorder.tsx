@@ -3,12 +3,14 @@
 import React, { useState, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mic, Square } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface VoiceRecorderProps {
   onTranscriptionComplete: (transcription: string) => void;
 }
 
 const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onTranscriptionComplete }) => {
+  const { language } = useLanguage();
   const [isRecording, setIsRecording] = useState(false);
   const [isTranscribing, setIsTranscribing] = useState(false);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -69,11 +71,11 @@ const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onTranscriptionComplete }
     <div>
       {isRecording ? (
         <Button onClick={stopRecording} variant="destructive">
-          <Square className="mr-2 h-4 w-4" /> Stop Recording
+          <Square className="mr-2 h-4 w-4" /> {language === 'en' ? 'Stop Recording' : '停止錄音'}
         </Button>
       ) : (
         <Button onClick={startRecording} disabled={isTranscribing}>
-          <Mic className="mr-2 h-4 w-4" /> {isTranscribing ? 'Transcribing...' : 'Start Recording'}
+          <Mic className="mr-2 h-4 w-4" /> {isTranscribing ? (language === 'en' ? 'Transcribing...' : '轉錄中...') : (language === 'en' ? 'Start Recording' : '開始錄音')}
         </Button>
       )}
     </div>
