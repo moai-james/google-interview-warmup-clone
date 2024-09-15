@@ -135,20 +135,20 @@ export function InterviewWarmupComponent() {
   };
 
   const renderHeader = () => (
-    <header className="flex items-center justify-between p-4 bg-white border-b relative">
-      <Button variant="ghost" size="icon" onClick={handlePreviousStep} className="absolute left-4">
-        <ArrowLeft className="h-6 w-6" />
+    <header className="flex items-center justify-between p-2 sm:p-4 bg-white border-b relative">
+      <Button variant="ghost" size="sm" onClick={handlePreviousStep} className="absolute left-2 sm:left-4">
+        <ArrowLeft className="h-4 w-4 sm:h-6 sm:w-6" />
       </Button>
-      <h1 className="text-xl font-semibold flex-grow text-center">
+      <h1 className="text-lg sm:text-xl font-semibold flex-grow text-center">
         {language === 'en' ? 'Interview warmup' : '面試熱身'}
       </h1>
-      <div className="flex items-center space-x-2 absolute right-4">
+      <div className="flex items-center space-x-1 sm:space-x-2 absolute right-2 sm:right-4">
         <LanguageSwitcher />
-        <Button variant="ghost" size="icon" onClick={() => setVolumeOn(!volumeOn)}>
-          <Volume2 className={`h-6 w-6 ${volumeOn ? '' : 'text-gray-400'}`} />
+        <Button variant="ghost" size="sm" onClick={() => setVolumeOn(!volumeOn)}>
+          <Volume2 className={`h-4 w-4 sm:h-6 sm:w-6 ${volumeOn ? '' : 'text-gray-400'}`} />
         </Button>
-        <Button variant="ghost" size="icon">
-          <MoreVertical className="h-6 w-6" />
+        <Button variant="ghost" size="sm">
+          <MoreVertical className="h-4 w-4 sm:h-6 sm:w-6" />
         </Button>
       </div>
     </header>
@@ -164,7 +164,7 @@ export function InterviewWarmupComponent() {
         transition={{ duration: 0.5 }}
       >
         <motion.h1 
-          className="text-4xl font-bold mb-4 text-center"
+          className="text-2xl sm:text-4xl font-bold mb-4 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -172,7 +172,7 @@ export function InterviewWarmupComponent() {
           {language === 'en' ? 'Interview warmup' : '面試熱身'}
         </motion.h1>
         <motion.p 
-          className="text-center mb-8 max-w-md"
+          className="text-center mb-8 max-w-md text-sm sm:text-base"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
@@ -196,7 +196,7 @@ export function InterviewWarmupComponent() {
     <div className="flex flex-col min-h-screen bg-gray-100">
       {renderHeader()}
       <main className="flex-grow p-4">
-        <h2 className="text-2xl font-semibold mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-6">
           {language === 'en' ? 'What field do you want to practice for?' : '你想練習哪個領域的面試？'}
         </h2>
         <div className="space-y-2">
@@ -204,7 +204,7 @@ export function InterviewWarmupComponent() {
             <Button
               key={position.key}
               variant="outline"
-              className="w-full justify-between"
+              className="w-full justify-between text-sm sm:text-base"
               onClick={() => handlePositionSelect(position.key)}
             >
               {position.label}
@@ -222,12 +222,12 @@ export function InterviewWarmupComponent() {
       <main className="flex-grow flex items-center justify-center p-4">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle className="text-center">
+            <CardTitle className="text-center text-lg sm:text-xl">
               {language === 'en' ? 'Answer 5 interview questions' : '回答 5 個面試問題'}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-center text-gray-600">
+            <p className="text-center text-gray-600 text-sm sm:text-base">
               {language === 'en' ? "When you're done, review your answers and discover insights." : '當你完成後，回顧你的回答並探索精闢見解。'}
             </p>
           </CardContent>
@@ -247,24 +247,24 @@ export function InterviewWarmupComponent() {
       <main className="flex-grow p-4">
         <Card className="w-full max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-sm font-normal text-blue-600">
+            <CardTitle className="text-xs sm:text-sm font-normal text-blue-600">
               {questions[currentStep]?.type === 'Background'
                 ? (language === 'en' ? 'Background question' : '背景問題')
                 : (language === 'en' ? 'Situational question' : '情境問題')}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <h2 className="text-xl font-semibold mb-4">
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">
               {language === 'en' ? questions[currentStep]?.question : questions[currentStep]?.question_zh}
             </h2>
             <div className="mb-4">
               <Button
                 variant="outline"
-                size="icon"
+                size="sm"
                 onClick={handlePlayAudio}
                 className={`${isPlaying ? 'bg-blue-100' : ''}`}
               >
-                <Volume2 className={`h-6 w-6 ${isPlaying ? 'text-blue-500' : ''}`} />
+                <Volume2 className={`h-4 w-4 sm:h-6 sm:w-6 ${isPlaying ? 'text-blue-500' : ''}`} />
               </Button>
               <audio
                 ref={audioRef}
@@ -277,25 +277,25 @@ export function InterviewWarmupComponent() {
             <div className="space-y-4">
               <VoiceRecorder onTranscriptionComplete={(transcription) => setCurrentAnswer(transcription)} />
               <textarea
-                className="w-full h-32 p-2 border rounded"
+                className="w-full h-32 p-2 border rounded text-sm sm:text-base"
                 value={currentAnswer}
                 onChange={(e) => setCurrentAnswer(e.target.value)}
                 placeholder={language === 'en' ? "Type your answer here..." : '在這裡輸入你的答案...'}
               />
             </div>
           </CardContent>
-          <CardFooter className="flex justify-between items-center">
+          <CardFooter className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
             <div className="text-sm text-gray-600">
               {currentStep + 1}/{totalQuestions}
             </div>
-            <div className="space-x-2">
+            <div className="flex space-x-2">
               {currentStep > 0 && (
-                <Button onClick={handlePrevious} variant="outline">
+                <Button onClick={handlePrevious} variant="outline" size="sm">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   {language === 'en' ? 'Previous' : '上一題'}
                 </Button>
               )}
-              <Button onClick={handleNext} disabled={currentAnswer.trim() === ''}>
+              <Button onClick={handleNext} disabled={currentAnswer.trim() === ''} size="sm">
                 {currentStep < totalQuestions - 1 ? (
                   <>
                     <ArrowRight className="mr-2 h-4 w-4" />
@@ -326,12 +326,12 @@ export function InterviewWarmupComponent() {
       <main className="flex-grow flex items-center justify-center p-4">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle className="text-center">
+            <CardTitle className="text-center text-lg sm:text-xl">
               {language === 'en' ? "Congrats, you did it! Let's review." : '恭喜你，你做到了！讓我們回顧一下。'}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-center text-gray-600">
+            <p className="text-center text-gray-600 text-sm sm:text-base">
               {language === 'en' ? "Use the insight buttons to learn more about your answers. Try to reflect on what you'd like to improve, then practice again." : '使用見解按鈕了解更多關於你的答案。試著反思你想要改進的地方，然後再次練習。'}
             </p>
           </CardContent>
