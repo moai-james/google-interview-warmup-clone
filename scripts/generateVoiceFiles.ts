@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -11,6 +11,14 @@ const FISH_AUDIO_API_URL = 'https://api.fish.audio/v1/tts';
 if (!FISH_AUDIO_API_KEY) {
   console.error('FISH_AUDIO_API_KEY is not set in the environment variables');
   process.exit(1);
+}
+
+interface Question {
+  question_id: string;
+  question: string;
+  question_zh: string;
+  voice_file_en?: string;
+  voice_file_zh?: string;
 }
 
 async function generateVoiceFile(text: string, language: string): Promise<Buffer> {
@@ -31,25 +39,29 @@ async function generateVoiceFile(text: string, language: string): Promise<Buffer
       opus_bitrate: -1000,
       latency: 'normal'
     }),
-    responseType: 'arraybuffer'
+    responseType: 'arraybuffer' as const // Specify the correct response type
   };
 
   try {
     const response = await axios(options);
     return Buffer.from(response.data);
   } catch (error) {
-    if (error.response) {
-      console.error('Error response:', {
-        status: error.response.status,
-        headers: error.response.headers,
-        data: Buffer.from(error.response.data).toString('utf-8')
-      });
-    } else if (error.request) {
-      console.error('Error request:', error.request);
+    if (error instanceof AxiosError) {
+      if (error.response) {
+        console.error('Error response:', {
+          status: error.response.status,
+          headers: error.response.headers,
+          data: Buffer.from(error.response.data).toString('utf-8')
+        });
+      } else if (error.request) {
+        console.error('Error request:', error.request);
+      } else {
+        console.error('Error message:', error.message);
+      }
+      console.error('Error config:', error.config);
     } else {
-      console.error('Error message:', error.message);
+      console.error('Unexpected error:', error);
     }
-    console.error('Error config:', error.config);
     throw error;
   }
 }
