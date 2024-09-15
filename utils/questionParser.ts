@@ -9,6 +9,8 @@ export interface Question {
   field: string;
   question: string;
   question_zh: string; // Added question_zh field
+  voice_file_en: string;
+  voice_file_zh: string;
 }
 
 export function getRandomQuestions(questions: Question[], count: number): Question[] {

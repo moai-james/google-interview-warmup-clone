@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "lib": ["es2017", "esnext.asynciterable"],
+      "strict": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "outDir": "dist",
+      "sourceMap": true,
+      "typeRoots": ["./node_modules/@types"]
+    },
+    "ts-node": {
+      "transpileOnly": true,
+      "compilerOptions": {
+        "module": "commonjs"
+      }
+    },
+    "include": ["scripts/**/*"],
+    "exclude": ["node_modules"]
+  }

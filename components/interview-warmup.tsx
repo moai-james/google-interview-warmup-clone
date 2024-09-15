@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, Mic, Keyboard, ArrowRight, Volume2, MoreVertical, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,8 +25,15 @@ export function InterviewWarmupComponent() {
   const [isRecording, setIsRecording] = useState(false);
   const [currentAnswer, setCurrentAnswer] = useState('');
   const [answers, setAnswers] = useState<string[]>(Array(totalQuestions).fill(''));
-  const [questions, setQuestions] = useState<{ question: string; question_zh: string; type: string }[]>([]);
+  const [questions, setQuestions] = useState<{ question: string; question_zh: string; type: string; voice_file_en?: string; voice_file_zh?: string }[]>([]);
   const { language, setLanguage } = useLanguage();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    const audioSrc = language === 'en' ? questions[currentStep]?.voice_file_en : questions[currentStep]?.voice_file_zh;
+    console.log('Audio source:', audioSrc);
+  }, [currentStep, language, questions]);
 
   const handleStart = () => {
     setCurrentPage('position');
@@ -48,7 +55,7 @@ export function InterviewWarmupComponent() {
         throw new Error('Failed to fetch questions');
       }
       const selectedQuestions: Question[] = await response.json();
-      setQuestions(selectedQuestions.map(q => ({ question: q.question, question_zh: q.question_zh, type: q.type })));
+      setQuestions(selectedQuestions.map(q => ({ question: q.question, question_zh: q.question_zh, type: q.type, voice_file_en: q.voice_file_en, voice_file_zh: q.voice_file_zh })));
       setCurrentPage('intro');
     } catch (error) {
       console.error('Error fetching questions:', error);
@@ -110,6 +117,20 @@ export function InterviewWarmupComponent() {
         break;
       default:
         break;
+    }
+  };
+
+  const handlePlayAudio = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(error => {
+          console.error('Error playing audio:', error);
+          // Optionally, show an error message to the user
+        });
+      }
+      setIsPlaying(!isPlaying);
     }
   };
 
@@ -236,6 +257,23 @@ export function InterviewWarmupComponent() {
             <h2 className="text-xl font-semibold mb-4">
               {language === 'en' ? questions[currentStep]?.question : questions[currentStep]?.question_zh}
             </h2>
+            <div className="mb-4">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={handlePlayAudio}
+                className={`${isPlaying ? 'bg-blue-100' : ''}`}
+              >
+                <Volume2 className={`h-6 w-6 ${isPlaying ? 'text-blue-500' : ''}`} />
+              </Button>
+              <audio
+                ref={audioRef}
+                src={language === 'en' ? questions[currentStep]?.voice_file_en : questions[currentStep]?.voice_file_zh}
+                onEnded={() => setIsPlaying(false)}
+                onError={(e) => console.error('Audio failed to load:', e)}
+                className="hidden"
+              />
+            </div>
             <div className="space-y-4">
               <VoiceRecorder onTranscriptionComplete={(transcription) => setCurrentAnswer(transcription)} />
               <textarea
