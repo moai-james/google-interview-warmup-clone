@@ -34,6 +34,7 @@ export function InterviewWarmupComponent() {
 
   const positions = [
     { key: 'trust_operations_personnel', label: language === 'en' ? "Trust Operations Personnel" : "信託人員" },
+    { key: 'general', label: language === 'en' ? "General" : "一般性" },
   ];
 
   const handlePositionSelect = async (positionKey: string) => {

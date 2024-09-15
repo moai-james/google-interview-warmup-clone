@@ -1,0 +1,182 @@
+[
+    {
+      "question_id": 1,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Teamwork and Collaboration",
+      "field": "General",
+      "question": "You're working on a team project and notice that one team member is consistently not meeting deadlines. How would you address this situation?",
+      "question_zh": "你正在進行一個團隊項目，發現一名成員總是無法按時完成任務。你會如何處理這種情況？"
+    },
+    {
+      "question_id": 2,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Adaptability",
+      "field": "General",
+      "question": "Your company undergoes a major restructuring, and your role changes significantly. How would you adapt to these changes?",
+      "question_zh": "你的公司進行了重大重組，你的角色發生了顯著變化。你會如何適應這些變化？"
+    },
+    {
+      "question_id": 3,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Leadership",
+      "field": "General",
+      "question": "You're asked to lead a project with team members from different departments. How would you ensure effective collaboration?",
+      "question_zh": "你被要求領導一個由不同部門成員組成的項目。你如何確保有效的協作？"
+    },
+    {
+      "question_id": 4,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Conflict Resolution",
+      "field": "General",
+      "question": "Two of your colleagues are having a disagreement that's affecting team productivity. How would you help resolve this conflict?",
+      "question_zh": "你的兩位同事之間的分歧正在影響團隊生產力。你會如何幫助解決這個衝突？"
+    },
+    {
+      "question_id": 5,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Time Management",
+      "field": "General",
+      "question": "You have multiple urgent tasks due on the same day. How would you prioritize and manage your time?",
+      "question_zh": "你有多個緊急任務在同一天截止。你會如何安排優先順序並管理時間？"
+    },
+    {
+      "question_id": 6,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Customer Service",
+      "field": "General",
+      "question": "A customer is extremely upset about a product or service. How would you handle this situation?",
+      "question_zh": "一位顧客對某項產品或服務非常不滿。你會如何處理這種情況？"
+    },
+    {
+      "question_id": 7,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Innovation",
+      "field": "General",
+      "question": "Your team is tasked with developing a new product or service. How would you approach this challenge?",
+      "question_zh": "你的團隊被要求開發一個新產品或服務。你會如何應對這個挑戰？"
+    },
+    {
+      "question_id": 8,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Stress Management",
+      "field": "General",
+      "question": "You're facing a high-pressure deadline with limited resources. How do you manage the stress and ensure the work is completed?",
+      "question_zh": "你面臨著一個高壓力的截止日期，但資源有限。你如何管理壓力並確保工作完成？"
+    },
+    {
+      "question_id": 9,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Decision Making",
+      "field": "General",
+      "question": "You need to make an important decision that will impact your entire team. What process would you follow?",
+      "question_zh": "你需要做出一個將影響整個團隊的重要決定。你會遵循什麼流程？"
+    },
+    {
+      "question_id": 10,
+      "category": "General",
+      "type": "Situational",
+      "evaluation_point": "Ethical Judgment",
+      "field": "General",
+      "question": "You discover a colleague is engaging in unethical behavior. What actions would you take?",
+      "question_zh": "你發現一位同事正在從事不道德的行為。你會採取什麼行動？"
+    },
+    {
+      "question_id": 11,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Leadership Experience",
+      "field": "General",
+      "question": "Can you describe a time when you had to lead a team through a difficult situation? What was your approach?",
+      "question_zh": "你能描述一次你必須帶領團隊度過困難時期的經歷嗎？你的方法是什麼？"
+    },
+    {
+      "question_id": 12,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Problem-Solving Skills",
+      "field": "General",
+      "question": "Tell us about a complex problem you solved at work. What was your process?",
+      "question_zh": "告訴我們你在工作中解決的一個複雜問題。你的解決過程是什麼？"
+    },
+    {
+      "question_id": 13,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Adaptability",
+      "field": "General",
+      "question": "Describe a situation where you had to quickly adapt to a significant change at work. How did you handle it?",
+      "question_zh": "描述一個你必須快速適應工作中重大變化的情況。你是如何處理的？"
+    },
+    {
+      "question_id": 14,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Teamwork",
+      "field": "General",
+      "question": "Give an example of a successful team project you were part of. What was your role, and what made it successful?",
+      "question_zh": "舉例說明你參與的一個成功的團隊項目。你的角色是什麼，是什麼使它成功？"
+    },
+    {
+      "question_id": 15,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Communication Skills",
+      "field": "General",
+      "question": "Can you share an experience where your communication skills made a significant difference in a work situation?",
+      "question_zh": "你能分享一次你的溝通技巧在工作情況中產生重大影響的經歷嗎？"
+    },
+    {
+      "question_id": 16,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Conflict Resolution",
+      "field": "General",
+      "question": "Tell us about a time when you had to resolve a conflict at work. What was your approach?",
+      "question_zh": "告訴我們你在工作中必須解決衝突的一次經歷。你的方法是什麼？"
+    },
+    {
+      "question_id": 17,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Initiative",
+      "field": "General",
+      "question": "Describe a situation where you took initiative to improve a process or solve a problem at work.",
+      "question_zh": "描述一個你主動改進工作流程或解決問題的情況。"
+    },
+    {
+      "question_id": 18,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Time Management",
+      "field": "General",
+      "question": "How do you prioritize tasks and manage your time effectively? Can you give an example?",
+      "question_zh": "你如何有效地安排任務優先順序並管理時間？能舉個例子嗎？"
+    },
+    {
+      "question_id": 19,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Continuous Learning",
+      "field": "General",
+      "question": "How do you stay updated with industry trends and continuously improve your skills?",
+      "question_zh": "你如何保持對行業趨勢的了解並不斷提高自己的技能？"
+    },
+    {
+      "question_id": 20,
+      "category": "General",
+      "type": "Background",
+      "evaluation_point": "Handling Pressure",
+      "field": "General",
+      "question": "Describe a high-pressure situation you faced at work. How did you handle it?",
+      "question_zh": "描述你在工作中面臨的一個高壓力情況。你是如何處理的？"
+    }
+  ]
