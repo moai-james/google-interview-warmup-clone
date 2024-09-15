@@ -11,6 +11,10 @@ import { parseQuestions, getRandomQuestions } from '@/utils/questionParser';
 import { Question } from '@/utils/questionParser';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useSession, signOut } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { User } from "lucide-react";
 
 const VoiceRecorder = dynamic(() => import('./VoiceRecorder'), { ssr: false });
 
@@ -29,6 +33,8 @@ export function InterviewWarmupComponent() {
   const { language, setLanguage } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const { data: session } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     const audioSrc = language === 'en' ? questions[currentStep]?.voice_file_en : questions[currentStep]?.voice_file_zh;
@@ -134,23 +140,40 @@ export function InterviewWarmupComponent() {
     }
   };
 
+  const handleLogout = async () => {
+    await signOut({ redirect: false });
+    router.push('/');
+  };
+
+  const handleUserInfo = () => {
+    router.push('/user/profile');
+  };
+
   const renderHeader = () => (
     <header className="flex items-center justify-between p-2 sm:p-4 bg-white border-b relative">
-      <Button variant="ghost" size="sm" onClick={handlePreviousStep} className="absolute left-2 sm:left-4">
-        <ArrowLeft className="h-4 w-4 sm:h-6 sm:w-6" />
-      </Button>
+      {currentPage !== 'main' && (
+        <Button variant="ghost" size="sm" onClick={handlePreviousStep} className="absolute left-2 sm:left-4">
+          <ArrowLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+        </Button>
+      )}
       <h1 className="text-lg sm:text-xl font-semibold flex-grow text-center">
-        {language === 'en' ? 'Interview warmup' : '面試熱身'}
+        {language === 'en' ? 'Interview warmup' : '模擬面試'}
       </h1>
-      <div className="flex items-center space-x-1 sm:space-x-2 absolute right-2 sm:right-4">
-        <LanguageSwitcher />
-        <Button variant="ghost" size="sm" onClick={() => setVolumeOn(!volumeOn)}>
-          <Volume2 className={`h-4 w-4 sm:h-6 sm:w-6 ${volumeOn ? '' : 'text-gray-400'}`} />
-        </Button>
-        <Button variant="ghost" size="sm">
-          <MoreVertical className="h-4 w-4 sm:h-6 sm:w-6" />
-        </Button>
-      </div>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" size="sm" className="absolute right-2 sm:right-4">
+            <User className="h-4 w-4 sm:h-6 sm:w-6" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          <DropdownMenuItem onClick={handleUserInfo}>
+            {language === 'en' ? 'User Profile' : '帳號'}
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={handleLogout}>
+            {language === 'en' ? 'Log Out' : '登出'}
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </header>
   );
 
