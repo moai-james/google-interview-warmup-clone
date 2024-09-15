@@ -2,6 +2,15 @@ import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import GitHubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials"
+import { DefaultSession } from "next-auth"
+
+declare module "next-auth" {
+  interface Session extends DefaultSession {
+    user?: {
+      id?: string;
+    } & DefaultSession["user"]
+  }
+}
 
 const handler = NextAuth({
   providers: [
@@ -61,7 +70,3 @@ const handler = NextAuth({
 })
 
 export { handler as GET, handler as POST }
-
-export const authOptions = {
-  // Your auth options configuration
-};
